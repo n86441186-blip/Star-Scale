@@ -1,457 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Star Scale – Your universe of reviews</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #050814;
-      --card-bg: #0d1224;
-      --accent: #2f7bff;
-      --accent-soft: #1b3c7a;
-      --text-main: #f5f7ff;
-      --text-muted: #a5b0d0;
-      --border-soft: #1b2340;
-      --star-on: #ffd75a;
-      --star-off: #3a4565;
-      --radius: 10px;
-    }
+    <title>Star Scale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b0c10;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+        header {
+            padding: 20px 0;
+            background-color: #1f2833;
+        }
 
-    body {
-      background: radial-gradient(circle at top, #101735 0, #050814 55%, #02030a 100%);
-      color: var(--text-main);
-      min-height: 100vh;
-    }
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        p.tagline {
+            margin-top: 8px;
+            color: #c5c6c7;
+        }
 
-    header {
-      border-bottom: 1px solid var(--border-soft);
-      background: rgba(3, 6, 20, 0.9);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+        .container {
+            margin-top: 40px;
+        }
 
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
+        .nav-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #45a29e;
+            color: #0b0c10;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            min-width: 140px;
+        }
 
-    .nav-star {
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--accent);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--accent);
-    }
+        .nav-button:hover {
+            background-color: #66fcf1;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .nav-right {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .search {
-      position: relative;
-    }
-
-    .search input {
-      background: #050814;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      padding: 0.4rem 2rem 0.4rem 0.75rem;
-      color: var(--text-main);
-      font-size: 0.85rem;
-      width: 170px;
-    }
-
-    .search span {
-      position: absolute;
-      right: 0.6rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 1.5rem auto 2.5rem;
-      padding: 0 1.25rem;
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1fr);
-      gap: 1.75rem;
-    }
-
-    @media (max-width: 800px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-      .nav {
-        flex-wrap: wrap;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-      }
-      .nav-right {
-        width: 100%;
-        justify-content: flex-start;
-      }
-    }
-
-    .hero {
-      margin-bottom: 1.25rem;
-      padding: 1.25rem 1.25rem 1rem;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, #101735 0, #050814 55%);
-      border: 1px solid var(--border-soft);
-    }
-
-    .hero-title {
-      font-size: 1.7rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .hero-sub {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      border-radius: 999px;
-      border: 1px solid var(--accent-soft);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.7rem;
-    }
-
-    .hero-note span {
-      font-size: 0.7rem;
-      color: var(--accent);
-    }
-
-    .section-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      border: 1px solid var(--border-soft);
-      padding: 0.9rem 1rem;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.75rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .card-title {
-      font-weight: 600;
-      font-size: 0.98rem;
-    }
-
-    .card-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      padding: 0.1rem 0.45rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-    }
-
-    .stars {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .star {
-      font-size: 0.9rem;
-      color: var(--star-off);
-    }
-
-    .star.on {
-      color: var(--star-on);
-    }
-
-    .score {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.35rem;
-    }
-
-    .summary {
-      font-size: 0.85rem;
-      color: var(--text-main);
-      margin-bottom: 0.4rem;
-    }
-
-    .meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .meta span {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .side-block {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      border: 1px solid var(--border-soft);
-      padding: 0.9rem 1rem;
-    }
-
-    .top-list {
-      margin-top: 0.4rem;
-      font-size: 0.85rem;
-    }
-
-    .top-list li {
-      list-style: none;
-      margin-bottom: 0.25rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .top-list span {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-    }
-
-    footer {
-      max-width: 1100px;
-      margin: 0 auto 1.5rem;
-      padding: 0 1.25rem;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-soft);
-      padding-top: 0.75rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .pill {
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      padding: 0.15rem 0.6rem;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-  </style>
+        footer {
+            margin-top: 40px;
+            padding: 10px 0 20px;
+            font-size: 12px;
+            color: #c5c6c7;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <div class="nav-left">
-        <div class="nav-star">★</div>
-        <span>Star Scale</span>
-      </div>
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Games</a>
-        <a href="#">Consoles</a>
-        <a href="#">Movies</a>
-        <a href="#">Tech</a>
-        <a href="#">All Ratings</a>
-      </div>
-      <div class="nav-right">
-        <div class="search">
-          <input type="text" placeholder="Search ratings…" />
-          <span>🔍</span>
+    <header>
+        <h1>Star Scale</h1>
+        <p class="tagline">My personal rating site for games, consoles, movies, and tech.</p>
+    </header>
+
+    <div class="container">
+        <h2>Choose a category</h2>
+
+        <div class="button-grid">
+            <a class="nav-button" href="home.html">Home</a>
+            <a class="nav-button" href="games.html">Games</a>
+            <a class="nav-button" href="consoles.html">Consoles</a>
+            <a class="nav-button" href="movies.html">Movies</a>
+            <a class="nav-button" href="tech.html">Tech</a>
+            <a class="nav-button" href="search.html">Search</a>
         </div>
-      </div>
-    </nav>
-  </header>
+    </div>
 
-  <main>
-    <!-- LEFT COLUMN -->
-    <section>
-      <div class="hero">
-        <div class="hero-title">Star Scale</div>
-        <div class="hero-sub">Your universe of reviews, rated right.</div>
-        <div class="hero-note">
-          <span>●</span> All scores are my personal ratings.
-        </div>
-      </div>
-
-      <h2 class="section-title">Latest ratings</h2>
-      <div class="cards">
-        <!-- CARD 1 -->
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Elden Ring</div>
-              <div class="card-tag">Game</div>
-            </div>
-            <div class="pill">My rating</div>
-          </div>
-          <div class="stars">
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star">★</span>
-          </div>
-          <div class="score">4.5 / 5</div>
-          <p class="summary">
-            Incredible world design and combat depth. A few rough edges, but easily one of the best modern action RPGs.
-          </p>
-          <div class="meta">Rated by <span>Star Scale</span></div>
-        </article>
-
-        <!-- CARD 2 -->
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Xbox Series X</div>
-              <div class="card-tag">Console</div>
-            </div>
-            <div class="pill">My rating</div>
-          </div>
-          <div class="stars">
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-          </div>
-          <div class="score">5 / 5</div>
-          <p class="summary">
-            Quiet, powerful, and fast. Great for Game Pass and performance-focused players who just want things to work.
-          </p>
-          <div class="meta">Rated by <span>Star Scale</span></div>
-        </article>
-
-        <!-- CARD 3 -->
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Dune: Part Two</div>
-              <div class="card-tag">Movie</div>
-            </div>
-            <div class="pill">My rating</div>
-          </div>
-          <div class="stars">
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star on">★</span>
-            <span class="star">★</span>
-          </div>
-          <div class="score">4 / 5</div>
-          <p class="summary">
-            Huge scale, amazing visuals, and strong sound design. A bit slow at times, but worth the ride.
-          </p>
-          <div class="meta">Rated by <span>Star Scale</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- RIGHT COLUMN / SIDEBAR -->
-    <aside class="sidebar">
-      <div class="side-block">
-        <h2 class="section-title">Top rated</h2>
-        <ul class="top-list">
-          <li>
-            <span>Elden Ring</span>
-            <span>4.5 / 5</span>
-          </li>
-          <li>
-            <span>Xbox Series X</span>
-            <span>5 / 5</span>
-          </li>
-          <li>
-            <span>Dune: Part Two</span>
-            <span>4 / 5</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="side-block">
-        <h2 class="section-title">About Star Scale</h2>
-        <p class="summary">
-          Star Scale is my personal rating system. No crowds, no averages—just one clear score for each thing I try.
-        </p>
-      </div>
-    </aside>
-  </main>
-
-  <footer>
-    <div>Star Scale © 2026 — All ratings are my personal opinion.</div>
-    <div class="pill">Built as a simple, personal review log.</div>
-  </footer>
+    <footer>
+        Star Scale · Built by me, one page at a time.
+    </footer>
 </body>
 </html>
