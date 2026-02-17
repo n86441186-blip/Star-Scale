@@ -2,37 +2,140 @@
 <html>
 <head>
     <title>Search - Star Scale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            padding: 25px 0;
+            background: linear-gradient(90deg, #0d1117, #1f6feb, #0d1117);
+            color: white;
+            box-shadow: 0 0 15px #1f6feb;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        .search-box {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 260px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            background-color: #161b22;
+            color: #e6edf3;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #1f6feb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 10px #1f6feb;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #58a6ff;
+            box-shadow: 0 0 15px #58a6ff;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            width: 80%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #1f6feb33;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #8b949e;
+        }
+    </style>
 </head>
 <body>
+
+<header>
     <h1>Search</h1>
+</header>
 
-    <p>Type something to search:</p>
+<div class="content">
+    <p>Search across Star Scale.</p>
 
-    <input id="searchBox" type="text" placeholder="Search Star Scale..." style="width: 250px; padding: 5px;">
-    <button onclick="doSearch()">Search</button>
+    <div class="search-box">
+        <input id="searchBox" type="text" placeholder="Search Star Scale...">
+        <button onclick="doSearch()">Search</button>
+    </div>
 
-    <p id="result"></p>
+    <div id="result" class="result-box" style="display:none;"></div>
 
-    <br><br>
-    <a href="index.html">Back to Home</a>
+    <p><a href="index.html">Back to Home</a></p>
+</div>
 
-    <script>
-        function doSearch() {
-            let text = document.getElementById("searchBox").value.toLowerCase();
-            let result = document.getElementById("result");
+<footer>
+    Star Scale · Search
+</footer>
 
-            if (text.includes("game")) {
-                result.innerHTML = 'Found in <a href="games.html">Games</a>';
-            } else if (text.includes("console")) {
-                result.innerHTML = 'Found in <a href="consoles.html">Consoles</a>';
-            } else if (text.includes("movie")) {
-                result.innerHTML = 'Found in <a href="movies.html">Movies</a>';
-            } else if (text.includes("tech")) {
-                result.innerHTML = 'Found in <a href="tech.html">Tech</a>';
-            } else {
-                result.innerHTML = "No results found.";
-            }
+<script>
+    function doSearch() {
+        let text = document.getElementById("searchBox").value.toLowerCase();
+        let result = document.getElementById("result");
+        result.style.display = "block";
+
+        if (text.includes("game")) {
+            result.innerHTML = 'Found in <a href="games.html">Games</a>';
+        } else if (text.includes("console")) {
+            result.innerHTML = 'Found in <a href="consoles.html">Consoles</a>';
+        } else if (text.includes("movie")) {
+            result.innerHTML = 'Found in <a href="movies.html">Movies</a>';
+        } else if (text.includes("tech")) {
+            result.innerHTML = 'Found in <a href="tech.html">Tech</a>';
+        } else if (text.includes("home")) {
+            result.innerHTML = 'Found in <a href="home.html">Home</a>';
+        } else {
+            result.innerHTML = "No results found.";
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
