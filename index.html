@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+
     <meta property="og:title" content="Star Scale" />
     <meta property="og:description" content="Honest ratings for movies, games, consoles, and books." />
     <meta property="og:image" content="https://n86441186-blip.github.io/Star-Scale/star.png" />
@@ -8,41 +10,9 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <title>Star Scale</title>
-
-    <!-- ⭐ This is the favicon line you need -->
     <link rel="icon" type="image/png" href="favicon.png">
 
-   <style>
-    body {
-        ...
-    }
-
-    .botm {
-        background: #0d0d0d;
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 15px;
-        border: 1px solid #1e90ff;
-    }
-
-    .botm h3 {
-        margin-top: 0;
-        color: #1e90ff;
-    }
-
-    .botm-link {
-        color: #1e90ff;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .botm-link:hover {
-        text-decoration: underline;
-    }
-</style>
-
-
-        
+    <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #0d1117;
@@ -89,26 +59,42 @@
             margin-top: 50px;
         }
 
-        .info-box {
+        .info-box, .botm {
             background-color: #161b22;
             border: 1px solid #30363d;
             padding: 30px;
-            margin: 0 auto;
+            margin: 0 auto 40px auto;
             width: 80%;
             max-width: 700px;
             border-radius: 8px;
             box-shadow: 0 0 12px #1f6feb33;
         }
 
-        .info-box h2 {
+        .info-box h2, .botm h2 {
             font-size: 32px;
             margin-bottom: 15px;
         }
 
-        .info-box p {
+        .info-box p, .botm p {
             font-size: 18px;
             line-height: 1.6;
             color: #c9d1d9;
+        }
+
+        .botm h3 {
+            margin-top: 0;
+            color: #1e90ff;
+            font-size: 24px;
+        }
+
+        .botm-link {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .botm-link:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -120,6 +106,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -153,13 +140,15 @@
             all parts of Star Scale.
         </p>
     </div>
-</div>
 
-<h2>📘 Book of the Month</h2>
-<div class="botm">
-    <h3>Boom Town — 4.6 Stars</h3>
-    <p>A family moves to a strange little town in Washington State called Boomtown… but nothing about this place is normal. Explosions, odd inventions, and quirky townspeople make this story unforgettable.</p>
-    <a href="books.html#boom-town" class="botm-link">Read the full rating →</a>
+    <div class="botm">
+        <h2>📘 Book of the Month</h2>
+        <h3>Boom Town — 4.6 Stars</h3>
+        <p>
+            A family moves to a strange little town in Washington State called Boomtown… but nothing about this place is normal. Explosions, odd inventions, and quirky townspeople make this story unforgettable.
+        </p>
+        <a href="books.html#boom-town" class="botm-link">Read the full rating →</a>
+    </div>
 </div>
 
 <footer>
