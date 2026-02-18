@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Star Scale - Books</title>
+    <title>Star Scale - BOOKS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,17 +66,35 @@
 </div>
 
 <header>
-    <h1>Books</h1>
+    <h1>BOOKS</h1>
 </header>
 
 <div class="container">
 
     <!-- ⭐ BOOK LIST ⭐ -->
 
-    <div class="rating-box" id="examplebook">
-        <h2>Example Book</h2>
+    <div class="rating-box" id="hplaptop">
+        <h2>HP Laptop</h2>
         <p>⭐⭐⭐⭐☆ (4/5)</p>
-        <p>This is a placeholder book entry. Replace it with your own anytime.</p>
+        <p>A reliable everyday machine with solid performance for work, browsing, and media.</p>
+    </div>
+
+    <div class="rating-box" id="galaxytaba">
+        <h2>Samsung Galaxy Tab A</h2>
+        <p>⭐⭐⭐⭐✨ (4.6/5)</p>
+        <p>Lightweight, smooth, and perfect for media, reading, and casual gaming.</p>
+    </div>
+
+    <div class="rating-box" id="xbox360kinect">
+        <h2>Xbox 360 Kinect</h2>
+        <p>⭐⭐⭐⭐☆ (4.2/5)</p>
+        <p>Fun motion‑tracking tech that still feels impressive and energetic.</p>
+    </div>
+
+    <div class="rating-box" id="wiimotionplus">
+        <h2>Wii MotionPlus</h2>
+        <p>⭐⭐⭐⭐⭐ (4.8/5)</p>
+        <p>Massively improves Wii motion accuracy — essential for games like Wii Sports Resort.</p>
     </div>
 
 </div>
@@ -92,7 +110,7 @@ window.onload = function () {
 
     const term = search.toLowerCase();
 
-    // Look through all book boxes
+    // Look through all tech boxes
     const boxes = document.querySelectorAll(".rating-box");
 
     for (let box of boxes) {
@@ -100,7 +118,7 @@ window.onload = function () {
 
         if (title.includes(term)) {
 
-            // Scroll to the book
+            // Scroll to the tech item
             box.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
@@ -117,4 +135,4 @@ window.onload = function () {
 </script>
 
 </body>
-</html>
+</html> 
