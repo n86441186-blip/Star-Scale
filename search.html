@@ -13,8 +13,8 @@
         }
 
         header {
-            padding: 25px 0;
             background: linear-gradient(90deg, #0d1117, #1f6feb, #0d1117);
+            padding: 25px 0;
             color: white;
             box-shadow: 0 0 15px #1f6feb;
         }
@@ -24,54 +24,39 @@
             font-size: 36px;
         }
 
-        .content {
+        .search-area {
             margin-top: 40px;
         }
 
-        .search-box {
-            margin-top: 20px;
-        }
-
-        input[type="text"] {
-            width: 260px;
-            padding: 10px;
+        input {
+            width: 60%;
+            max-width: 400px;
+            padding: 12px;
             border-radius: 6px;
             border: 1px solid #30363d;
             background-color: #161b22;
             color: #e6edf3;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         button {
-            padding: 10px 20px;
+            padding: 12px 20px;
             margin-left: 10px;
+            border-radius: 6px;
+            border: none;
             background-color: #1f6feb;
             color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 18px;
             cursor: pointer;
-            box-shadow: 0 0 10px #1f6feb;
-            transition: 0.2s;
         }
 
         button:hover {
-            background-color: #58a6ff;
-            box-shadow: 0 0 15px #58a6ff;
+            background-color: #388bfd;
         }
 
-        .result-box {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            width: 80%;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px #1f6feb33;
+        #result {
+            margin-top: 40px;
+            font-size: 22px;
         }
 
         a {
@@ -85,7 +70,7 @@
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             padding: 20px 0;
             font-size: 14px;
             color: #8b949e;
@@ -98,43 +83,121 @@
     <h1>Search</h1>
 </header>
 
-<div class="content">
-    <p>Search across Star Scale.</p>
-
-    <div class="search-box">
-        <input id="searchBox" type="text" placeholder="Search Star Scale...">
-        <button onclick="doSearch()">Search</button>
-    </div>
-
-    <div id="result" class="result-box" style="display:none;"></div>
-
-    <p><a href="index.html">Back to Home</a></p>
+<div class="search-area">
+    <input type="text" id="searchBox" placeholder="Search Star Scale...">
+    <button onclick="doSearch()">Search</button>
 </div>
+
+<div id="result"></div>
 
 <footer>
     Star Scale · Search
 </footer>
 
 <script>
-    function doSearch() {
-        let text = document.getElementById("searchBox").value.toLowerCase();
-        let result = document.getElementById("result");
-        result.style.display = "block";
+function doSearch() {
+    let text = document.getElementById("searchBox").value.toLowerCase();
+    let result = document.getElementById("result");
 
-        if (text.includes("game")) {
-            result.innerHTML = 'Found in <a href="games.html">Games</a>';
-        } else if (text.includes("console")) {
-            result.innerHTML = 'Found in <a href="consoles.html">Consoles</a>';
-        } else if (text.includes("movie")) {
-            result.innerHTML = 'Found in <a href="movies.html">Movies</a>';
-        } else if (text.includes("tech")) {
-            result.innerHTML = 'Found in <a href="tech.html">Tech</a>';
-        } else if (text.includes("home")) {
-            result.innerHTML = 'Found in <a href="home.html">Home</a>';
-        } else {
-            result.innerHTML = "No results found.";
-        }
+    // MOVIES
+    if (text.includes("croods") || text.includes("crood")) {
+        result.innerHTML = 'Found: The Croods — <a href="movies.html">Movies</a>';
+        return;
     }
+    if (text.includes("nacho")) {
+        result.innerHTML = 'Found: Nacho Libre — <a href="movies.html">Movies</a>';
+        return;
+    }
+    if (text.includes("lego") || text.includes("batman")) {
+        result.innerHTML = 'Found: LEGO Batman — <a href="movies.html">Movies</a>';
+        return;
+    }
+    if (text.includes("aliens") || text.includes("attic")) {
+        result.innerHTML = 'Found: Aliens in the Attic — <a href="movies.html">Movies</a>';
+        return;
+    }
+    if (text.includes("spaced") || text.includes("invaders")) {
+        result.innerHTML = 'Found: Spaced Invaders — <a href="movies.html">Movies</a>';
+        return;
+    }
+    if (text.includes("zathura")) {
+        result.innerHTML = 'Found: Zathura — <a href="movies.html">Movies</a>';
+        return;
+    }
+    if (text.includes("jumanji")) {
+        result.innerHTML = 'Found: Jumanji — <a href="movies.html">Movies</a>';
+        return;
+    }
+    if (text.includes("robinsons")) {
+        result.innerHTML = 'Found: Meet the Robinsons — <a href="movies.html">Movies</a>';
+        return;
+    }
+    if (text.includes("despicable") || text.includes("me")) {
+        result.innerHTML = 'Found: Despicable Me — <a href="movies.html">Movies</a>';
+        return;
+    }
+
+    // GAMES
+    if (text.includes("roblox")) {
+        result.innerHTML = 'Found: Roblox — <a href="games.html">Games</a>';
+        return;
+    }
+    if (text.includes("expendabros") || text.includes("bro")) {
+        result.innerHTML = 'Found: The Expendabros — <a href="games.html">Games</a>';
+        return;
+    }
+    if (text.includes("hill") || text.includes("climb")) {
+        result.innerHTML = 'Found: Hill Climb Racing — <a href="games.html">Games</a>';
+        return;
+    }
+    if (text.includes("clash") || text.includes("kings")) {
+        result.innerHTML = 'Found: Clash of Kings West — <a href="games.html">Games</a>';
+        return;
+    }
+    if (text.includes("sunset") || text.includes("bike")) {
+        result.innerHTML = 'Found: Sunset Bike Racer — <a href="games.html">Games</a>';
+        return;
+    }
+    if (text.includes("minecraft") || text.includes("craft")) {
+        result.innerHTML = 'Found: Minecraft — <a href="games.html">Games</a>';
+        return;
+    }
+    if (text.includes("tf2") || text.includes("team fortress") || text.includes("fortress")) {
+        result.innerHTML = 'Found: Team Fortress 2 — <a href="games.html">Games</a>';
+        return;
+    }
+
+    // CONSOLES
+    if (text.includes("wii")) {
+        result.innerHTML = 'Found: Nintendo Wii — <a href="consoles.html">Consoles</a>';
+        return;
+    }
+    if (text.includes("360") || text.includes("xbox")) {
+        result.innerHTML = 'Found: Xbox 360 — <a href="consoles.html">Consoles</a>';
+        return;
+    }
+
+    // TECH
+    if (text.includes("hp")) {
+        result.innerHTML = 'Found: HP Laptop — <a href="tech.html">Tech</a>';
+        return;
+    }
+    if (text.includes("samsung") || text.includes("tab")) {
+        result.innerHTML = 'Found: Samsung Galaxy Tab A — <a href="tech.html">Tech</a>';
+        return;
+    }
+    if (text.includes("kinect")) {
+        result.innerHTML = 'Found: Xbox 360 Kinect — <a href="tech.html">Tech</a>';
+        return;
+    }
+    if (text.includes("motion") || text.includes("plus") || text.includes("motionplus")) {
+        result.innerHTML = 'Found: Wii MotionPlus — <a href="tech.html">Tech</a>';
+        return;
+    }
+
+    // NOTHING FOUND
+    result.innerHTML = "No results found.";
+}
 </script>
 
 </body>
