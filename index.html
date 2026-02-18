@@ -9,12 +9,12 @@
             color: #e6edf3;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         header {
-            padding: 30px 0;
             background: linear-gradient(90deg, #0d1117, #1f6feb, #0d1117);
+            padding: 30px 0;
+            text-align: center;
             color: white;
             box-shadow: 0 0 15px #1f6feb;
         }
@@ -24,36 +24,57 @@
             font-size: 42px;
         }
 
-        .content {
-            margin-top: 60px;
-        }
-
-        .nav-button {
-            display: block;
+        nav {
             background-color: #161b22;
-            border: 1px solid #30363d;
-            padding: 18px;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 350px;
-            border-radius: 8px;
+            border-bottom: 1px solid #30363d;
+            padding: 15px 0;
+            text-align: center;
             box-shadow: 0 0 10px #1f6feb33;
         }
 
-        .nav-button a {
+        nav a {
             color: #58a6ff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 22px;
+            margin: 0 20px;
+            font-size: 20px;
         }
 
-        .nav-button:hover {
-            box-shadow: 0 0 15px #1f6feb88;
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .info-box {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            padding: 30px;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px #1f6feb33;
+        }
+
+        .info-box h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #c9d1d9;
         }
 
         footer {
             margin-top: 70px;
             padding: 20px 0;
+            text-align: center;
             font-size: 14px;
             color: #8b949e;
         }
@@ -65,24 +86,33 @@
     <h1>Star Scale</h1>
 </header>
 
+<nav>
+    <a href="index.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="movies.html">Movies</a>
+    <a href="games.html">Games</a>
+    <a href="consoles.html">Consoles</a>
+    <a href="tech.html">Tech</a>
+</nav>
+
 <div class="content">
-
-    <div class="nav-button">
-        <a href="movies.html">Movies</a>
+    <div class="info-box">
+        <h2>What is Star Scale?</h2>
+        <p>
+            Star Scale is a simple, clean rating system designed to give quick, honest scores 
+            for movies, games, consoles, and tech. Each rating uses a 5‑star scale with half‑stars 
+            and sparkle stars for extra precision.
+        </p>
+        <p>
+            The goal is to keep things easy to browse, easy to understand, and fun to explore. 
+            No long reviews, no complicated categories — just straightforward ratings with a 
+            clean design and a glowing blue theme.
+        </p>
+        <p>
+            Use the navigation bar above to explore each category and discover ratings across 
+            all parts of Star Scale.
+        </p>
     </div>
-
-    <div class="nav-button">
-        <a href="games.html">Games</a>
-    </div>
-
-    <div class="nav-button">
-        <a href="consoles.html">Consoles</a>
-    </div>
-
-    <div class="nav-button">
-        <a href="tech.html">Tech</a>
-    </div>
-
 </div>
 
 <footer>
