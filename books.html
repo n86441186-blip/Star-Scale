@@ -4,72 +4,84 @@
     <title>Star Scale - Books</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: #0d1117;
             color: #e6edf3;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        nav {
-            background-color: #161b22;
-            padding: 15px;
+        header {
+            padding: 25px 0;
             text-align: center;
-            box-shadow: 0 0 10px #1f6feb;
-        }
-
-        nav a {
-            color: #58a6ff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
+            background: linear-gradient(90deg, #0d1117, #1f6feb, #0d1117);
+            color: white;
+            box-shadow: 0 0 15px #1f6feb;
         }
 
         h1 {
-            text-align: center;
-            margin-top: 30px;
-            color: #58a6ff;
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
         }
 
         .rating-box {
             background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
             padding: 20px;
-            margin: 20px auto;
-            width: 60%;
-            transition: 0.3s;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
         }
 
-        .rating-box:hover {
-            transform: scale(1.02);
-            border-color: #1f6feb;
-            box-shadow: 0 0 12px #1f6feb;
+        .rating-box h2 {
+            margin-top: 0;
+            color: #58a6ff;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="search.html">Search</a>
-    <a href="movies.html">Movies</a>
-    <a href="games.html">Games</a>
-    <a href="consoles.html">Consoles</a>
-    <a href="books.html">Books</a>
-</nav>
-
-<h1>Books</h1>
-
-<!-- ⭐ Example Book ⭐ -->
-<div class="rating-box" id="percyjackson1">
-    <h2>Percy Jackson: The Lightning Thief</h2>
-    <p>⭐⭐⭐⭐☆ (4.2/5)</p>
-    <p>A fun, fast-paced adventure with great world‑building and a memorable hero.</p>
+<div class="back">
+    <a href="index.html">Back to Home</a>
 </div>
 
-<!-- ⭐ Scroll + Highlight Script ⭐ -->
+<header>
+    <h1>Books</h1>
+</header>
+
+<div class="container">
+
+    <!-- ⭐ BOOK LIST ⭐ -->
+
+    <div class="rating-box" id="percyjackson1">
+        <h2>Percy Jackson: The Lightning Thief</h2>
+        <p>⭐⭐⭐⭐☆ (4.2/5)</p>
+        <p>A fun, fast‑paced adventure with great world‑building and a memorable hero.</p>
+    </div>
+
+</div>
+
+<!-- ⭐ AUTO‑SCROLL + HIGHLIGHT SEARCH SCRIPT ⭐ -->
 <script>
 window.onload = function () {
 
@@ -81,19 +93,18 @@ window.onload = function () {
     const boxes = document.querySelectorAll(".rating-box");
 
     for (let box of boxes) {
-        const id = box.id.toLowerCase();
         const title = box.querySelector("h2").innerText.toLowerCase();
 
-        if (
-            id.includes(term) ||
-            title.includes(term) ||
-            title.replace("the ", "").includes(term) ||
-            term.includes(id) ||
-            term.includes(title.replace("the ", ""))
-        ) {
-            box.scrollIntoView({ behavior: "smooth", block: "center" });
+        if (title.includes(term)) {
+
+            box.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
             box.style.border = "2px solid #1f6feb";
             box.style.boxShadow = "0 0 15px #1f6feb";
+
             return;
         }
     }
