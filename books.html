@@ -7,13 +7,28 @@
             background-color: #0d1117;
             color: #e6edf3;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #161b22;
+            padding: 15px;
             text-align: center;
-            padding: 20px;
+            box-shadow: 0 0 10px #1f6feb;
+        }
+
+        nav a {
+            color: #58a6ff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
         }
 
         h1 {
+            text-align: center;
+            margin-top: 30px;
             color: #58a6ff;
-            margin-bottom: 30px;
         }
 
         .rating-box {
@@ -23,7 +38,6 @@
             padding: 20px;
             margin: 20px auto;
             width: 60%;
-            text-align: left;
             transition: 0.3s;
         }
 
@@ -32,24 +46,30 @@
             border-color: #1f6feb;
             box-shadow: 0 0 12px #1f6feb;
         }
-
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-        }
     </style>
 </head>
 
 <body>
 
-<p><a href="index.html">Back to Home</a></p>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="movies.html">Movies</a>
+    <a href="games.html">Games</a>
+    <a href="consoles.html">Consoles</a>
+    <a href="books.html">Books</a>
+</nav>
 
 <h1>Books</h1>
 
-<!-- ⭐ BOOK LIST (empty for now) ⭐ -->
-<p style="opacity:0.6;">No books added yet — add some anytime!</p>
+<!-- ⭐ Example Book ⭐ -->
+<div class="rating-box" id="percyjackson1">
+    <h2>Percy Jackson: The Lightning Thief</h2>
+    <p>⭐⭐⭐⭐☆ (4.2/5)</p>
+    <p>A fun, fast-paced adventure with great world‑building and a memorable hero.</p>
+</div>
 
-<!-- ⭐ SCROLL + HIGHLIGHT SCRIPT ⭐ -->
+<!-- ⭐ Scroll + Highlight Script ⭐ -->
 <script>
 window.onload = function () {
 
