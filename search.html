@@ -74,39 +74,103 @@
     <h1>Search</h1>
 </header>
 
-<input type="text" id="searchInput" placeholder="Search Star Scale...">
+<input type="text" id="searchInput" placeholder="Search Star Scale..." onkeydown="if(event.key==='Enter'){search();}">
 <button onclick="search()">Search</button>
 
 <div id="result"></div>
 
 <script>
 function search() {
-    let text = document.getElementById("searchInput").value.toLowerCase();
+    let text = document.getElementById("searchInput").value.toLowerCase().trim();
+    if (!text) return;
 
     // -----------------------------
-    // CATEGORY DETECTION (AUTO)
+    // CONSOLES
     // -----------------------------
-
-    // Consoles keywords
-    if (text.includes("wii") || text.includes("xbox") || text.includes("console")) {
-        window.location.href = "consoles.html?search=" + text;
+    if (
+        text.includes("wii") ||
+        text.includes("nintendo wii") ||
+        text.includes("xbox 360") ||
+        text.includes("xbox360") ||
+        text.includes("console")
+    ) {
+        window.location.href = "consoles.html?search=" + encodeURIComponent(text);
         return;
     }
 
-    // Tech keywords
-    if (text.includes("laptop") || text.includes("galaxy") || text.includes("tablet") || text.includes("tech")) {
-        window.location.href = "tech.html?search=" + text;
+    // -----------------------------
+    // TECH
+    // -----------------------------
+    if (
+        text.includes("laptop") ||
+        text.includes("hp laptop") ||
+        text.includes("galaxy") ||
+        text.includes("tab a") ||
+        text.includes("tablet") ||
+        text.includes("tech") ||
+        text.includes("kinect") ||
+        text.includes("motionplus") ||
+        text.includes("motion plus")
+    ) {
+        window.location.href = "tech.html?search=" + encodeURIComponent(text);
         return;
     }
 
-    // Games keywords
-    if (text.includes("minecraft") || text.includes("roblox") || text.includes("fortress") || text.includes("game")) {
-        window.location.href = "games.html?search=" + text;
+    // -----------------------------
+    // GAMES
+    // (covers all current games + generic "game" fallback)
+    // -----------------------------
+    if (
+        text.includes("roblox") ||
+        text.includes("expendabros") ||
+        text.includes("expenda") ||
+        text.includes("hill climb") ||
+        text.includes("hillclimb") ||
+        text.includes("climb") ||
+        text.includes("clash of kings") ||
+        text.includes("clash") ||
+        text.includes("sunset bike") ||
+        text.includes("sunset") ||
+        text.includes("bike") ||
+        text.includes("minecraft") ||
+        text.includes("team fortress") ||
+        text.includes("tf2") ||
+        text.includes("fortress") ||
+        text.includes("game")
+    ) {
+        window.location.href = "games.html?search=" + encodeURIComponent(text);
         return;
     }
 
-    // Default → Movies
-    window.location.href = "movies.html?search=" + text;
+    // -----------------------------
+    // MOVIES (default + movie keywords)
+    // -----------------------------
+    if (
+        text.includes("nacho") ||
+        text.includes("lego batman") ||
+        text.includes("lego") ||
+        text.includes("aliens in the attic") ||
+        text.includes("aliens") ||
+        text.includes("spaced invaders") ||
+        text.includes("spaced") ||
+        text.includes("escape from planet earth") ||
+        text.includes("planet earth") ||
+        text.includes("zathura") ||
+        text.includes("jumanji") ||
+        text.includes("meet the robinsons") ||
+        text.includes("robinsons") ||
+        text.includes("croods") ||
+        text.includes("despicable me") ||
+        text.includes("despicable") ||
+        text.includes("movie") ||
+        text.includes("film")
+    ) {
+        window.location.href = "movies.html?search=" + encodeURIComponent(text);
+        return;
+    }
+
+    // If nothing matched clearly, default to movies
+    window.location.href = "movies.html?search=" + encodeURIComponent(text);
 }
 </script>
 
