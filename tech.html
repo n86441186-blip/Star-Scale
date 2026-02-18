@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tech - Star Scale</title>
+    <title>Star Scale - Tech</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -9,11 +9,11 @@
             color: #e6edf3;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         header {
             padding: 25px 0;
+            text-align: center;
             background: linear-gradient(90deg, #0d1117, #1f6feb, #0d1117);
             color: white;
             box-shadow: 0 0 15px #1f6feb;
@@ -24,78 +24,115 @@
             font-size: 36px;
         }
 
-        .content {
-            margin-top: 40px;
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
         }
 
         .rating-box {
             background-color: #161b22;
-            border: 1px solid #30363d;
             padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px #1f6feb33;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+
+        .rating-box h2 {
+            margin-top: 0;
+            color: #58a6ff;
         }
 
         a {
             color: #58a6ff;
             text-decoration: none;
-            font-weight: bold;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            font-size: 14px;
-            color: #8b949e;
+        .back {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
+
 <body>
 
-<p style="margin-top:20px;"><a href="index.html">Back to Home</a></p>
+<div class="back">
+    <a href="index.html">Back to Home</a>
+</div>
 
 <header>
     <h1>Tech</h1>
 </header>
 
-<div class="content">
+<div class="container">
 
-    <div class="rating-box">
+    <!-- ⭐ TECH LIST ⭐ -->
+
+    <div class="rating-box" id="hplaptop">
         <h2>HP Laptop</h2>
         <p>⭐⭐⭐⭐☆ (4/5)</p>
-        <p>Reliable performance with a clean design and solid everyday usability.</p>
+        <p>A reliable everyday machine with solid performance for work, browsing, and media.</p>
     </div>
 
-    <div class="rating-box">
+    <div class="rating-box" id="galaxytaba">
         <h2>Samsung Galaxy Tab A</h2>
-        <p>⭐⭐⭐✨☆ (3.8/5)</p>
-        <p>A dependable tablet with good battery life and smooth media performance.</p>
+        <p>⭐⭐⭐⭐✨ (4.6/5)</p>
+        <p>Lightweight, smooth, and perfect for media, reading, and casual gaming.</p>
     </div>
 
-    <div class="rating-box">
+    <div class="rating-box" id="xbox360kinect">
         <h2>Xbox 360 Kinect</h2>
-        <p>⭐⭐⭐⭐✨ (4.5/5)</p>
-        <p>Fun motion‑tracking tech that still feels unique and energetic.</p>
+        <p>⭐⭐⭐⭐☆ (4.2/5)</p>
+        <p>Fun motion‑tracking tech that still feels impressive and energetic.</p>
     </div>
 
-    <div class="rating-box">
+    <div class="rating-box" id="wiimotionplus">
         <h2>Wii MotionPlus</h2>
-        <p>⭐⭐⭐⭐⭐ (5/5)</p>
-        <p>Transforms Wii gameplay with far better accuracy and responsiveness.</p>
+        <p>⭐⭐⭐⭐⭐ (4.8/5)</p>
+        <p>Massively improves Wii motion accuracy — essential for games like Wii Sports Resort.</p>
     </div>
 
 </div>
 
-<footer>
-    Star Scale · Tech
-</footer>
+<!-- ⭐ AUTO‑SCROLL + HIGHLIGHT SEARCH SCRIPT ⭐ -->
+<script>
+window.onload = function () {
+
+    // Read ?search= value
+    const params = new URLSearchParams(window.location.search);
+    const search = params.get("search");
+    if (!search) return;
+
+    const term = search.toLowerCase();
+
+    // Look through all tech boxes
+    const boxes = document.querySelectorAll(".rating-box");
+
+    for (let box of boxes) {
+        const title = box.querySelector("h2").innerText.toLowerCase();
+
+        if (title.includes(term)) {
+
+            // Scroll to the tech item
+            box.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+            // Highlight it
+            box.style.border = "2px solid #1f6feb";
+            box.style.boxShadow = "0 0 15px #1f6feb";
+
+            return;
+        }
+    }
+};
+</script>
 
 </body>
 </html>
