@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search - Star Scale</title>
+    <title>Star Scale - Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -65,6 +65,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <p style="margin-top:20px;"><a href="index.html">Back to Home</a></p>
@@ -81,26 +82,31 @@
 <script>
 function search() {
     let text = document.getElementById("searchInput").value.toLowerCase();
-    let result = document.getElementById("result");
 
-    // CATEGORY MAP
-    const categories = {
-        games: "games.html",
-        consoles: "consoles.html",
-        movies: "movies.html",
-        tech: "tech.html"
-    };
+    // -----------------------------
+    // CATEGORY DETECTION (AUTO)
+    // -----------------------------
 
-    // Try each category page
-    for (let category in categories) {
-        let page = categories[category];
-
-        // If the search text matches an ID, jump to it
-        window.location.href = `${page}#${text.replace(/\s+/g, "")}`;
+    // Consoles keywords
+    if (text.includes("wii") || text.includes("xbox") || text.includes("console")) {
+        window.location.href = "consoles.html?search=" + text;
         return;
     }
 
-    result.innerHTML = "No results found.";
+    // Tech keywords
+    if (text.includes("laptop") || text.includes("galaxy") || text.includes("tablet") || text.includes("tech")) {
+        window.location.href = "tech.html?search=" + text;
+        return;
+    }
+
+    // Games keywords
+    if (text.includes("minecraft") || text.includes("roblox") || text.includes("fortress") || text.includes("game")) {
+        window.location.href = "games.html?search=" + text;
+        return;
+    }
+
+    // Default → Movies
+    window.location.href = "movies.html?search=" + text;
 }
 </script>
 
