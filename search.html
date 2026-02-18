@@ -19,11 +19,6 @@
             box-shadow: 0 0 15px #1f6feb;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-
         input {
             width: 70%;
             padding: 12px;
@@ -35,33 +30,35 @@
             font-size: 16px;
         }
 
-        button {
-            padding: 12px 20px;
-            margin-left: 10px;
-            border: none;
+        #results {
+            width: 70%;
+            margin: 10px auto 0 auto;
+            text-align: left;
+            background-color: #161b22;
+            border: 1px solid #30363d;
             border-radius: 6px;
-            background-color: #1f6feb;
-            color: white;
-            font-size: 16px;
+            display: none;
+            padding: 10px;
+        }
+
+        .result-item {
+            padding: 10px;
+            border-bottom: 1px solid #30363d;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #388bfd;
+        .result-item:hover {
+            background-color: #1f6feb33;
         }
 
-        #result {
-            margin-top: 30px;
-            font-size: 18px;
+        .category-label {
+            color: #9da5b4;
+            font-size: 14px;
         }
 
         a {
             color: #58a6ff;
             text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -70,107 +67,71 @@
 
 <p style="margin-top:20px;"><a href="index.html">Back to Home</a></p>
 
-<header>
-    <h1>Search</h1>
-</header>
+<header><h1>Search</h1></header>
 
-<input type="text" id="searchInput" placeholder="Search Star Scale..." onkeydown="if(event.key==='Enter'){search();}">
-<button onclick="search()">Search</button>
+<input id="searchInput" placeholder="Search Star Scale..." oninput="liveSearch()">
 
-<div id="result"></div>
+<div id="results"></div>
 
 <script>
-function search() {
-    let text = document.getElementById("searchInput").value.toLowerCase().trim();
-    if (!text) return;
+async function fetchPage(url) {
+    const res = await fetch(url);
+    return await res.text();
+}
 
-    // -----------------------------
-    // CONSOLES
-    // -----------------------------
-    if (
-        text.includes("wii") ||
-        text.includes("nintendo wii") ||
-        text.includes("xbox 360") ||
-        text.includes("xbox360") ||
-        text.includes("console")
-    ) {
-        window.location.href = "consoles.html?search=" + encodeURIComponent(text);
+async function liveSearch() {
+    const term = document.getElementById("searchInput").value.toLowerCase().trim();
+    const resultsBox = document.getElementById("results");
+
+    if (!term) {
+        resultsBox.style.display = "none";
+        resultsBox.innerHTML = "";
         return;
     }
 
-    // -----------------------------
-    // TECH
-    // -----------------------------
-    if (
-        text.includes("laptop") ||
-        text.includes("hp laptop") ||
-        text.includes("galaxy") ||
-        text.includes("tab a") ||
-        text.includes("tablet") ||
-        text.includes("tech") ||
-        text.includes("kinect") ||
-        text.includes("motionplus") ||
-        text.includes("motion plus")
-    ) {
-        window.location.href = "tech.html?search=" + encodeURIComponent(text);
+    const pages = {
+        "Movies": "movies.html",
+        "Games": "games.html",
+        "Consoles": "consoles.html",
+        "Tech": "tech.html"
+    };
+
+    let results = [];
+
+    for (let category in pages) {
+        let html = await fetchPage(pages[category]);
+
+        // Extract all <h2> titles
+        let matches = [...html.matchAll(/<h2>(.*?)<\/h2>/g)];
+
+        for (let m of matches) {
+            let title = m[1];
+            if (title.toLowerCase().includes(term)) {
+                // Find the ID by looking for the rating-box before the title
+                let idMatch = html.substring(0, html.indexOf(m[0])).match(/id="(.*?)"/g);
+                let id = idMatch ? idMatch[idMatch.length - 1].replace('id="', '').replace('"', '') : "";
+
+                results.push({
+                    title: title,
+                    category: category,
+                    link: pages[category] + "#" + id
+                });
+            }
+        }
+    }
+
+    if (results.length === 0) {
+        resultsBox.style.display = "block";
+        resultsBox.innerHTML = `<div class="result-item">No results found</div>`;
         return;
     }
 
-    // -----------------------------
-    // GAMES
-    // (covers all current games + generic "game" fallback)
-    // -----------------------------
-    if (
-        text.includes("roblox") ||
-        text.includes("expendabros") ||
-        text.includes("expenda") ||
-        text.includes("hill climb") ||
-        text.includes("hillclimb") ||
-        text.includes("climb") ||
-        text.includes("clash of kings") ||
-        text.includes("clash") ||
-        text.includes("sunset bike") ||
-        text.includes("sunset") ||
-        text.includes("bike") ||
-        text.includes("minecraft") ||
-        text.includes("team fortress") ||
-        text.includes("tf2") ||
-        text.includes("fortress") ||
-        text.includes("game")
-    ) {
-        window.location.href = "games.html?search=" + encodeURIComponent(text);
-        return;
-    }
-
-    // -----------------------------
-    // MOVIES (default + movie keywords)
-    // -----------------------------
-    if (
-        text.includes("nacho") ||
-        text.includes("lego batman") ||
-        text.includes("lego") ||
-        text.includes("aliens in the attic") ||
-        text.includes("aliens") ||
-        text.includes("spaced invaders") ||
-        text.includes("spaced") ||
-        text.includes("escape from planet earth") ||
-        text.includes("planet earth") ||
-        text.includes("zathura") ||
-        text.includes("jumanji") ||
-        text.includes("meet the robinsons") ||
-        text.includes("robinsons") ||
-        text.includes("croods") ||
-        text.includes("despicable me") ||
-        text.includes("despicable") ||
-        text.includes("movie") ||
-        text.includes("film")
-    ) {
-        window.location.href = "movies.html?search=" + encodeURIComponent(text);
-        return;
-    }
-
-    // If nothing matched clearly, default to movies
-    window.location.href = "movies.html?search=" + encodeURIComponent(text);
+    resultsBox.style.display = "block";
+    resultsBox.innerHTML = results.map(r => `
+        <div class="result-item" onclick="window.location.href='${r.link}'">
+            ${r.title} <span class="category-label">— ${r.category}</span>
+        </div>
+    `).join("");
 }
 </script>
 
