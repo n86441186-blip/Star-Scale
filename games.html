@@ -71,7 +71,7 @@
 
 <div class="container">
 
-    <!-- GAME LIST -->
+    <!-- ⭐ GAME LIST ⭐ -->
 
     <div class="rating-box" id="roblox">
         <h2>Roblox</h2>
@@ -111,46 +111,3 @@
 
     <div class="rating-box" id="teamfortress2">
         <h2>Team Fortress 2</h2>
-        <p>⭐⭐⭐⭐✨ (4.6/5)</p>
-        <p>Iconic characters, great gameplay, and endless replayability.</p>
-    </div>
-
-</div>
-
-<!-- ⭐ AUTO‑SCROLL + HIGHLIGHT SEARCH SCRIPT ⭐ -->
-<script>
-window.onload = function () {
-
-    // Read ?search= value
-    const params = new URLSearchParams(window.location.search);
-    const search = params.get("search");
-    if (!search) return;
-
-    const term = search.toLowerCase();
-
-    // Look through all game boxes
-    const boxes = document.querySelectorAll(".rating-box");
-
-    for (let box of boxes) {
-        const title = box.querySelector("h2").innerText.toLowerCase();
-
-        if (title.includes(term)) {
-
-            // Scroll to the game
-            box.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-            // Highlight it
-            box.style.border = "2px solid #1f6feb";
-            box.style.boxShadow = "0 0 15px #1f6feb";
-
-            return;
-        }
-    }
-};
-</script>
-
-</body>
-</html>
