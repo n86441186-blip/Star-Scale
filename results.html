@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Scale - Results</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #58a6ff;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #9da5b4;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            font-size: 22px;
+            color: #58a6ff;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 class="loading">Searching Star Scale…</h1>
+
+<script>
+async function findCategory() {
+    const params = new URLSearchParams(window.location.search);
+    const term = params.get("search").toLowerCase();
+
+    // Pages to check
+    const pages = [
+        "movies.html",
+        "games.html",
+        "consoles.html",
+        "tech.html"
+    ];
+
+    // Check each page for the search term
+    for (let page of pages) {
+        try {
+            let response = await fetch(page);
+            let html = await response.text();
+
+            // If the page contains the search term, redirect to it
+            if (html.toLowerCase().includes(term)) {
+                window.location.href = page + "?search=" + encodeURIComponent(term);
+                return;
+            }
+        } catch (e) {
+            console.error("Error loading page:", page, e);
+        }
+    }
+
+    // If nothing matched:
+    document.body.innerHTML = `
+        <h1>No Results Found</h1>
+        <p>We couldn’t find anything matching: <strong>${term}</strong></p>
+        <p><a href="search.html">Try another search</a></p>
+        <p><a href="index.html">Back to Home</a></p>
+    `;
+}
+
+findCategory();
+</script>
+
+</body>
+</html>
