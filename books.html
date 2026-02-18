@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Scale - Books</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #58a6ff;
+            margin-bottom: 30px;
+        }
+
+        .rating-box {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .rating-box:hover {
+            transform: scale(1.02);
+            border-color: #1f6feb;
+            box-shadow: 0 0 12px #1f6feb;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<p><a href="index.html">Back to Home</a></p>
+
+<h1>Books</h1>
+
+<!-- ⭐ BOOK LIST (empty for now) ⭐ -->
+<p style="opacity:0.6;">No books added yet — add some anytime!</p>
+
+<!-- ⭐ SCROLL + HIGHLIGHT SCRIPT ⭐ -->
+<script>
+window.onload = function () {
+
+    const params = new URLSearchParams(window.location.search);
+    const search = params.get("search");
+    if (!search) return;
+
+    const term = search.toLowerCase();
+    const boxes = document.querySelectorAll(".rating-box");
+
+    for (let box of boxes) {
+        const id = box.id.toLowerCase();
+        const title = box.querySelector("h2").innerText.toLowerCase();
+
+        if (
+            id.includes(term) ||
+            title.includes(term) ||
+            title.replace("the ", "").includes(term) ||
+            term.includes(id) ||
+            term.includes(title.replace("the ", ""))
+        ) {
+            box.scrollIntoView({ behavior: "smooth", block: "center" });
+            box.style.border = "2px solid #1f6feb";
+            box.style.boxShadow = "0 0 15px #1f6feb";
+            return;
+        }
+    }
+};
+</script>
+
+</body>
+</html>
