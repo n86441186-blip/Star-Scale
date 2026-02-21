@@ -5,7 +5,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+
+            /* ⭐ Cosmic texture background */
             background-color: #0d1117;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+
             color: #e6edf3;
             margin: 0;
             padding: 0;
@@ -30,12 +34,28 @@
             margin: 30px auto;
         }
 
+        /* ⭐ Floating rating boxes */
         .rating-box {
             background-color: #161b22;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 6px;
             border: 1px solid #30363d;
+
+            /* Floating illusion */
+            box-shadow:
+                0 0 18px #1f6feb33,
+                0 8px 20px rgba(0,0,0,0.45);
+
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* ⭐ Hover lift */
+        .rating-box:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 0 22px #1f6feb55,
+                0 12px 28px rgba(0,0,0,0.55);
         }
 
         .rating-box h2 {
@@ -76,7 +96,7 @@
     <div class="rating-box" id="teamfortress2">
         <h2>Team Fortress 2</h2>
         <p>⭐⭐⭐✨☆ (3.9/5)</p>
-    <p>A chaotic, stylish multiplayer classic with tons of personality. Still fun today, but shows its age in places.</p>
+        <p>A chaotic, stylish multiplayer classic with tons of personality. Still fun today, but shows its age in places.</p>
     </div>
 
     <div class="rating-box" id="expendabros">
@@ -109,41 +129,46 @@
         <p>A timeless sandbox classic with limitless creativity.</p>
     </div>
 
-<div class="rating-box" id="roblox">
-    <h2>Roblox</h2>
-    <p>⭐⭐⭐✨☆ (3.5/5)</p>
-    <p>Endless creativity and variety. A platform where every experience feels different.</p>
+    <div class="rating-box" id="roblox">
+        <h2>Roblox</h2>
+        <p>⭐⭐⭐✨☆ (3.5/5)</p>
+        <p>Endless creativity and variety. A platform where every experience feels different.</p>
+    </div>
+
+    <div class="rating-box" id="township">
+        <h2>Township</h2>
+        <p>⭐⭐⭐✨☆ (3.4/5)</p>
+        <p>A relaxing farm‑and‑town sim with a cozy vibe and satisfying progression.</p>
+    </div>
+
+    <div class="rating-box" id="falloutshelter">
+        <h2>Fallout Shelter</h2>
+        <p>⭐⭐⭐✨⭐ (3.8/5)</p>
+        <p>A clever 2D survival management game that makes you think while keeping things fun.</p>
+    </div>
+
+    <div class="rating-box" id="tanki">
+        <h2>Tanki</h2>
+        <p>⭐⭐⭐✨☆ (3.4/5)</p>
+        <p>A fast, chaotic tank game with fun modes and lots of replay value.</p>
+    </div>
+
+    <div class="rating-box" id="diepio">
+        <h2>Diep.io</h2>
+        <p>⭐⭐⭐☆☆ (3.1/5)</p>
+        <p>A simple tank browser game that’s fun at first but can get annoying after repeated deaths.</p>
+    </div>
+
+    <div class="rating-box" id="badpiggies">
+        <h2>Bad Piggies</h2>
+        <p>⭐⭐⭐⭐☆ (4.0/5)</p>
+        <p>
+            Great for hours of entertainment, especially on long car rides with no WiFi. 
+            Creative, fun, and surprisingly addictive.
+        </p>
+    </div>
+
 </div>
 
-<div class="rating-box" id="township">
-    <h2>Township</h2>
-    <p>⭐⭐⭐✨☆ (3.4/5)</p>
-    <p>A relaxing farm‑and‑town sim with a cozy vibe and satisfying progression.</p>
-</div>
-
-<div class="rating-box" id="falloutshelter">
-    <h2>Fallout Shelter</h2>
-    <p>⭐⭐⭐✨⭐ (3.8/5)</p>
-    <p>A clever 2D survival management game that makes you think while keeping things fun.</p>
-</div>
-
-<div class="rating-box" id="tanki">
-    <h2>Tanki</h2>
-    <p>⭐⭐⭐✨☆ (3.4/5)</p>
-    <p>A fast, chaotic tank game with fun modes and lots of replay value.</p>
-</div>
-
-<div class="rating-box" id="diepio">
-    <h2>Diep.io</h2>
-    <p>⭐⭐⭐☆☆ (3.1/5)</p>
-    <p>A simple tank browser game that’s fun at first but can get annoying after repeated deaths.</p>
-</div>
-
-<div class="rating-box" id="badpiggies">
-    <h2>Bad Piggies</h2>
-    <p>⭐⭐⭐⭐☆ (4.0/5)</p>
-    <p>
-        Great for hours of entertainment, especially on long car rides with no WiFi. 
-        Creative, fun, and surprisingly addictive.
-    </p>
-</div>
+</body>
+</html>
