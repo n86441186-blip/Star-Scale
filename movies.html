@@ -5,7 +5,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+
+            /* ⭐ Cosmic texture background */
             background-color: #0d1117;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+
             color: #e6edf3;
             margin: 0;
             padding: 0;
@@ -30,12 +34,28 @@
             margin: 30px auto;
         }
 
+        /* ⭐ Floating rating boxes */
         .rating-box {
             background-color: #161b22;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 6px;
             border: 1px solid #30363d;
+
+            /* Floating illusion */
+            box-shadow:
+                0 0 18px #1f6feb33,
+                0 8px 20px rgba(0,0,0,0.45);
+
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* ⭐ Hover lift */
+        .rating-box:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 0 22px #1f6feb55,
+                0 12px 28px rgba(0,0,0,0.55);
         }
 
         .rating-box h2 {
@@ -71,7 +91,7 @@
 
 <div class="container">
 
-    <!-- MOVIE LIST -->
+    <!-- ⭐ MOVIE LIST ⭐ -->
 
     <div class="rating-box" id="nacholibre">
         <h2>Nacho Libre</h2>
@@ -145,59 +165,59 @@
         <p>Non‑stop silly fun.</p>
     </div>
 
-<div class="rating-box" id="legomovie">
-    <h2>The LEGO Movie</h2>
-    <p>⭐⭐⭐✨☆ (3.4/5)</p>
-    <p>Creative and funny, but not as strong as other animated comedies.</p>
-</div>
+    <div class="rating-box" id="legomovie">
+        <h2>The LEGO Movie</h2>
+        <p>⭐⭐⭐✨☆ (3.4/5)</p>
+        <p>Creative and funny, but not as strong as other animated comedies.</p>
+    </div>
 
-<div class="rating-box" id="journeyearth">
-    <h2>Journey to the Center of the Earth</h2>
-    <p>⭐⭐⭐⭐☆ (4.3/5)</p>
-    <p>A fun, adventurous family movie with great energy and cool effects.</p>
-</div>
+    <div class="rating-box" id="journeyearth">
+        <h2>Journey to the Center of the Earth</h2>
+        <p>⭐⭐⭐⭐☆ (4.3/5)</p>
+        <p>A fun, adventurous family movie with great energy and cool effects.</p>
+    </div>
 
-<div class="rating-box" id="cloudy">
-    <h2>Cloudy With a Chance of Meatballs</h2>
-    <p>⭐⭐⭐✨☆ (3.8/5)</p>
-    <p>Goofy, colorful, and fun — not amazing, but definitely entertaining.</p>
-</div>
+    <div class="rating-box" id="cloudy">
+        <h2>Cloudy With a Chance of Meatballs</h2>
+        <p>⭐⭐⭐✨☆ (3.8/5)</p>
+        <p>Goofy, colorful, and fun — not amazing, but definitely entertaining.</p>
+    </div>
 
-<div class="rating-box" id="mirrormirror">
-    <h2>Mirror Mirror</h2>
-    <p>⭐⭐⭐✨☆ (3.7/5)</p>
-    <p>The best Snow White movie… but that’s not saying much. Still fun and charming.</p>
-</div>
+    <div class="rating-box" id="mirrormirror">
+        <h2>Mirror Mirror</h2>
+        <p>⭐⭐⭐✨☆ (3.7/5)</p>
+        <p>The best Snow White movie… but that’s not saying much. Still fun and charming.</p>
+    </div>
 
-<div class="rating-box" id="secretlifeofpets">
-    <h2>The Secret Life of Pets</h2>
-    <p>⭐⭐⭐⭐☆ (4.0/5)</p>
-    <p>Funny, energetic, and great for families — lots of cute pet humor.</p>
-</div>
+    <div class="rating-box" id="secretlifeofpets">
+        <h2>The Secret Life of Pets</h2>
+        <p>⭐⭐⭐⭐☆ (4.0/5)</p>
+        <p>Funny, energetic, and great for families — lots of cute pet humor.</p>
+    </div>
 
-<div class="rating-box" id="up">
-    <h2>Up</h2>
-    <p>⭐⭐⭐☆☆ (2.9/5)</p>
-    <p>Emotional opening, but the rest doesn’t hold up as well. Not my favorite.</p>
-</div>
+    <div class="rating-box" id="up">
+        <h2>Up</h2>
+        <p>⭐⭐⭐☆☆ (2.9/5)</p>
+        <p>Emotional opening, but the rest doesn’t hold up as well. Not my favorite.</p>
+    </div>
 
-<div class="rating-box" id="realsteel">
-    <h2>Real Steel</h2>
-    <p>⭐⭐⭐✨☆ (3.9/5)</p>
-    <p>Cool robot action with some language. Fun and surprisingly heartfelt.</p>
-</div>
+    <div class="rating-box" id="realsteel">
+        <h2>Real Steel</h2>
+        <p>⭐⭐⭐✨☆ (3.9/5)</p>
+        <p>Cool robot action with some language. Fun and surprisingly heartfelt.</p>
+    </div>
 
-<div class="rating-box" id="runningthebases">
-    <h2>Running the Bases</h2>
-    <p>⭐⭐⭐⭐☆ (4.1/5)</p>
-    <p>A strong Christian sports drama with heart, purpose, and great themes.</p>
-</div>
+    <div class="rating-box" id="runningthebases">
+        <h2>Running the Bases</h2>
+        <p>⭐⭐⭐⭐☆ (4.1/5)</p>
+        <p>A strong Christian sports drama with heart, purpose, and great themes.</p>
+    </div>
 
-<div class="rating-box" id="monstersvsaliens">
-    <h2>Monsters vs. Aliens</h2>
-    <p>⭐⭐⭐⭐☆ (4.3/5)</p>
-    <p>Funny, creative, and full of personality — a really fun animated adventure.</p>
-</div>
+    <div class="rating-box" id="monstersvsaliens">
+        <h2>Monsters vs. Aliens</h2>
+        <p>⭐⭐⭐⭐☆ (4.3/5)</p>
+        <p>Funny, creative, and full of personality — a really fun animated adventure.</p>
+    </div>
 
 </div>
 
@@ -205,14 +225,11 @@
 <script>
 window.onload = function () {
 
-    // Read ?search= value
     const params = new URLSearchParams(window.location.search);
     const search = params.get("search");
     if (!search) return;
 
     const term = search.toLowerCase();
-
-    // Look through all movie boxes
     const boxes = document.querySelectorAll(".rating-box");
 
     for (let box of boxes) {
@@ -220,13 +237,11 @@ window.onload = function () {
 
         if (title.includes(term)) {
 
-            // Scroll to the movie
             box.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
             });
 
-            // Highlight it
             box.style.border = "2px solid #1f6feb";
             box.style.boxShadow = "0 0 15px #1f6feb";
 
