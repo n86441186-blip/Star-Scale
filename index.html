@@ -142,21 +142,22 @@
         </p>
     </div>
 
-<h2>Poll of the Month</h2>
+<div class="content">
+    <div class="info-box">
+        <h2>Poll of the Month</h2>
+        <p>Apple vs Samsung</p>
 
-<div class="poll-box">
-  <p>Apple vs Samsung</p>
+        <div id="poll-options">
+            <button class="poll-btn" onclick="vote('apple')">Apple</button>
+            <button class="poll-btn" onclick="vote('samsung')">Samsung</button>
+        </div>
 
-  <div id="poll-options">
-    <button onclick="vote('apple')">Apple</button>
-    <button onclick="vote('samsung')">Samsung</button>
-  </div>
-
-  <div id="poll-results" style="display:none; margin-top:10px;">
-    <p><strong>Results:</strong></p>
-    <p id="apple-result"></p>
-    <p id="samsung-result"></p>
-  </div>
+        <div id="poll-results" style="display:none; margin-top:10px;">
+            <p><strong>Results:</strong></p>
+            <p id="apple-result"></p>
+            <p id="samsung-result"></p>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -181,8 +182,10 @@
     let applePercent = total ? Math.round((apple / total) * 100) : 0;
     let samsungPercent = total ? Math.round((samsung / total) * 100) : 0;
 
-    document.getElementById("apple-result").innerText = "Apple: " + applePercent + "% (" + apple + " votes)";
-    document.getElementById("samsung-result").innerText = "Samsung: " + samsungPercent + "% (" + samsung + " votes)";
+    document.getElementById("apple-result").innerText =
+      "Apple: " + applePercent + "% (" + apple + " votes)";
+    document.getElementById("samsung-result").innerText =
+      "Samsung: " + samsungPercent + "% (" + samsung + " votes)";
 
     document.getElementById("poll-options").style.display = "none";
     document.getElementById("poll-results").style.display = "block";
@@ -190,38 +193,21 @@
 </script>
 
 <style>
-  .poll-box {
-    background:#111;
-    padding:20px;
-    border-radius:10px;
-    max-width:300px;
+  .poll-btn {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
-  .poll-box button {
-    width:100%;
-    margin:5px 0;
-    padding:10px;
-    background:#222;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-  }
-  .poll-box button:hover {
-    background:#333;
+  .poll-btn:hover {
+    background: #333;
   }
 </style>
 
-  <div id="poll-options">
-    <button onclick="vote('apple')">Apple</button>
-    <button onclick="vote('samsung')">Samsung</button>
-  </div>
-
-  <div id="poll-results" style="display:none; margin-top:10px;">
-    <p><strong>Results:</strong></p>
-    <p id="apple-result"></p>
-    <p id="samsung-result"></p>
-  </div>
-</div>
 
     <div class="botm">
         <h2>📘 Book of the Month</h2>
