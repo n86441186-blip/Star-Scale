@@ -161,7 +161,20 @@
 </div>
 
 <script>
+  // Show results immediately if user already voted
+  window.onload = function() {
+    if (localStorage.getItem("poll_voted") === "true") {
+      showResults();
+    }
+  };
+
   function vote(choice) {
+    // Prevent double voting
+    if (localStorage.getItem("poll_voted") === "true") {
+      showResults();
+      return;
+    }
+
     let apple = parseInt(localStorage.getItem("poll_apple") || "0");
     let samsung = parseInt(localStorage.getItem("poll_samsung") || "0");
 
@@ -170,6 +183,9 @@
 
     localStorage.setItem("poll_apple", apple);
     localStorage.setItem("poll_samsung", samsung);
+
+    // Mark user as having voted
+    localStorage.setItem("poll_voted", "true");
 
     showResults();
   }
@@ -207,6 +223,7 @@
     background: #333;
   }
 </style>
+
 
 
     <div class="botm">
