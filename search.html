@@ -5,7 +5,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+
+            /* ⭐ Cosmic texture background */
             background-color: #0d1117;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+
             color: #e6edf3;
             text-align: center;
             margin: 0;
@@ -30,6 +34,7 @@
             font-size: 16px;
         }
 
+        /* ⭐ Floating results box */
         #results {
             width: 70%;
             margin: 10px auto 0 auto;
@@ -40,6 +45,21 @@
             display: none;
             padding: 0;
             overflow: hidden;
+
+            /* Floating illusion */
+            box-shadow:
+                0 0 18px #1f6feb33,
+                0 8px 20px rgba(0,0,0,0.45);
+
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* ⭐ Hover lift on results box */
+        #results:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 0 22px #1f6feb55,
+                0 12px 28px rgba(0,0,0,0.55);
         }
 
         .result-item {
