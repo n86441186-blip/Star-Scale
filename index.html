@@ -16,7 +16,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #0d1117, #0b0f14);
+
+            /* ⭐ Subtle cosmic texture */
+            background-color: #0d1117;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+
             color: #e6edf3;
             margin: 0;
             padding: 0;
@@ -60,7 +64,7 @@
             margin-top: 50px;
         }
 
-        /* Floating box effect */
+        /* ⭐ Floating box effect */
         .info-box, .botm {
             background-color: #161b22;
             border: 1px solid #30363d;
@@ -70,17 +74,21 @@
             max-width: 700px;
             border-radius: 8px;
 
-            /* Soft blue glow */
-            box-shadow: 0 0 14px #1f6feb33;
+            /* Ambient glow + floating illusion */
+            box-shadow:
+                0 0 18px #1f6feb33,
+                0 8px 20px rgba(0,0,0,0.45);
 
-            /* Smooth hover animation */
+            /* Smooth hover */
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        /* Hover lift */
+        /* ⭐ Hover lift */
         .info-box:hover, .botm:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.45);
+            box-shadow:
+                0 0 22px #1f6feb55,
+                0 12px 28px rgba(0,0,0,0.55);
         }
 
         .info-box h2, .botm h2 {
@@ -118,21 +126,25 @@
             color: #8b949e;
         }
 
-        /* Poll buttons */
+        /* ⭐ Poll buttons */
         .poll-btn {
             width: 100%;
-            margin: 5px 0;
-            padding: 10px;
-            background: #222;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            margin: 6px 0;
+            padding: 12px;
+            background: #1a1f27;
+            color: #e6edf3;
+            border: 1px solid #30363d;
+            border-radius: 8px;
             cursor: pointer;
-            transition: 0.2s ease;
+
+            transition: 0.25s ease;
+            box-shadow: 0 0 10px #1f6feb22;
         }
 
         .poll-btn:hover {
-            background: #333;
+            background: #222831;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.45), 0 0 12px #1f6feb55;
         }
     </style>
 </head>
@@ -181,12 +193,22 @@
         <div id="poll-options">
             <button class="poll-btn" onclick="vote('apple')">Apple</button>
             <button class="poll-btn" onclick="vote('samsung')">Samsung</button>
+
+            <!-- ⭐ New link to Polls page -->
+            <p style="margin-top:15px;">
+                <a href="polls.html" class="botm-link">See past polls →</a>
+            </p>
         </div>
 
         <div id="poll-results" style="display:none; margin-top:10px;">
             <p><strong>Results:</strong></p>
             <p id="apple-result"></p>
             <p id="samsung-result"></p>
+
+            <!-- ⭐ Also show link after voting -->
+            <p style="margin-top:15px;">
+                <a href="polls.html" class="botm-link">See past polls →</a>
+            </p>
         </div>
     </div>
 </div>
