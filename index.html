@@ -166,74 +166,20 @@
         <p>Use the navigation bar above to explore each category.</p>
     </div>
 
-    <div class="info-box">
-        <h2>📊 Poll of the Month</h2>
-        <p>Apple vs Samsung</p>
+<div class="info-box">
+    <h2>📊 Poll of the Month</h2>
+    <p>Apple vs Samsung</p>
 
-        <div id="poll-options">
-            <button class="poll-btn" onclick="vote('apple')">Apple</button>
-            <button class="poll-btn" onclick="vote('samsung')">Samsung</button>
+    <!-- ⭐ Global StrawPoll Embed -->
+    <iframe 
+        src="https://strawpoll.com/embed/kogjRrQ7qg6" 
+        style="width:100%;height:500px;border:none;border-radius:8px;box-shadow:0 0 12px #1f6feb55;">
+    </iframe>
 
-            <p style="margin-top:15px;">
-                <a href="polls.html" class="botm-link">See past polls →</a>
-            </p>
-        </div>
-
-        <div id="poll-results" style="display:none; margin-top:10px;">
-            <p><strong>Results:</strong></p>
-            <p id="apple-result"></p>
-            <p id="samsung-result"></p>
-
-            <p style="margin-top:15px;">
-                <a href="polls.html" class="botm-link">See past polls →</a>
-            </p>
-        </div>
-    </div>
+    <p style="margin-top:15px;">
+        <a href="polls.html" class="botm-link">See past polls →</a>
+    </p>
 </div>
-
-<script>
-  window.onload = function() {
-    if (localStorage.getItem("poll_voted") === "true") {
-      showResults();
-    }
-  };
-
-  function vote(choice) {
-    if (localStorage.getItem("poll_voted") === "true") {
-      showResults();
-      return;
-    }
-
-    let apple = parseInt(localStorage.getItem("poll_apple") || "0");
-    let samsung = parseInt(localStorage.getItem("poll_samsung") || "0");
-
-    if (choice === "apple") apple++;
-    if (choice === "samsung") samsung++;
-
-    localStorage.setItem("poll_apple", apple);
-    localStorage.setItem("poll_samsung", samsung);
-    localStorage.setItem("poll_voted", "true");
-
-    showResults();
-  }
-
-  function showResults() {
-    let apple = parseInt(localStorage.getItem("poll_apple") || "0");
-    let samsung = parseInt(localStorage.getItem("poll_samsung") || "0");
-
-    let total = apple + samsung;
-    let applePercent = total ? Math.round((apple / total) * 100) : 0;
-    let samsungPercent = total ? Math.round((samsung / total) * 100) : 0;
-
-    document.getElementById("apple-result").innerText =
-      "Apple: " + applePercent + "% (" + apple + " votes)";
-    document.getElementById("samsung-result").innerText =
-      "Samsung: " + samsungPercent + "% (" + samsung + "votes)";
-
-    document.getElementById("poll-options").style.display = "none";
-    document.getElementById("poll-results").style.display = "block";
-  }
-</script>
 
 <div class="botm">
     <h2>📘 Book of the Month</h2>
