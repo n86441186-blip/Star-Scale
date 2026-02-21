@@ -16,7 +16,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0d1117;
+            background: linear-gradient(180deg, #0d1117, #0b0f14);
             color: #e6edf3;
             margin: 0;
             padding: 0;
@@ -60,6 +60,7 @@
             margin-top: 50px;
         }
 
+        /* Floating box effect */
         .info-box, .botm {
             background-color: #161b22;
             border: 1px solid #30363d;
@@ -68,7 +69,18 @@
             width: 80%;
             max-width: 700px;
             border-radius: 8px;
-            box-shadow: 0 0 12px #1f6feb33;
+
+            /* Soft blue glow */
+            box-shadow: 0 0 14px #1f6feb33;
+
+            /* Smooth hover animation */
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* Hover lift */
+        .info-box:hover, .botm:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.45);
         }
 
         .info-box h2, .botm h2 {
@@ -104,6 +116,23 @@
             text-align: center;
             font-size: 14px;
             color: #8b949e;
+        }
+
+        /* Poll buttons */
+        .poll-btn {
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .poll-btn:hover {
+            background: #333;
         }
     </style>
 </head>
@@ -163,7 +192,6 @@
 </div>
 
 <script>
-  // Show results immediately if user already voted
   window.onload = function() {
     if (localStorage.getItem("poll_voted") === "true") {
       showResults();
@@ -171,7 +199,6 @@
   };
 
   function vote(choice) {
-    // Prevent double voting
     if (localStorage.getItem("poll_voted") === "true") {
       showResults();
       return;
@@ -185,8 +212,6 @@
 
     localStorage.setItem("poll_apple", apple);
     localStorage.setItem("poll_samsung", samsung);
-
-    // Mark user as having voted
     localStorage.setItem("poll_voted", "true");
 
     showResults();
@@ -210,23 +235,6 @@
   }
 </script>
 
-<style>
-  .poll-btn {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    background: #222;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .poll-btn:hover {
-    background: #333;
-  }
-</style>
-
-
 
     <div class="botm">
         <h2>📘 Book of the Month</h2>
@@ -249,8 +257,7 @@
 </div>
 
 <footer>
-            Star Scale · Home ·
-    © 2026 Star Scale All rights reserved.
+    Star Scale · Home · © 2026 Star Scale All rights reserved.
 </footer>
 
 </body>
