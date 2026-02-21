@@ -5,7 +5,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+
+            /* ⭐ Cosmic texture background */
             background-color: #0d1117;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+
             color: #e6edf3;
             margin: 0;
             padding: 0;
@@ -30,12 +34,28 @@
             margin: 30px auto;
         }
 
+        /* ⭐ Floating rating boxes */
         .rating-box {
             background-color: #161b22;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 6px;
             border: 1px solid #30363d;
+
+            /* Floating illusion */
+            box-shadow:
+                0 0 18px #1f6feb33,
+                0 8px 20px rgba(0,0,0,0.45);
+
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* ⭐ Hover lift */
+        .rating-box:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 0 22px #1f6feb55,
+                0 12px 28px rgba(0,0,0,0.55);
         }
 
         .rating-box h2 {
@@ -173,12 +193,6 @@
     <p>A creative Christian fantasy series with strong themes, memorable characters, and a unique world.</p>
 </div>
 
-<div class="rating-box" id="wormling">
-    <h2>The Wormling Series</h2>
-    <p>⭐⭐⭐⭐☆ (4.1/5)</p>
-    <p>A creative Christian fantasy series with strong themes, memorable characters, and a unique world.</p>
-</div>
-
 <div class="rating-box" id="berinfell">
     <h2>The Berinfell Prophecies</h2>
     <p>⭐⭐⭐⭐✨ (4.4/5)</p>
@@ -191,14 +205,11 @@
 <script>
 window.onload = function () {
 
-    // Read ?search= value
     const params = new URLSearchParams(window.location.search);
     const search = params.get("search");
     if (!search) return;
 
     const term = search.toLowerCase();
-
-    // Look through all tech boxes
     const boxes = document.querySelectorAll(".rating-box");
 
     for (let box of boxes) {
@@ -206,13 +217,11 @@ window.onload = function () {
 
         if (title.includes(term)) {
 
-            // Scroll to the tech item
             box.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
             });
 
-            // Highlight it
             box.style.border = "2px solid #1f6feb";
             box.style.boxShadow = "0 0 15px #1f6feb";
 
@@ -223,4 +232,4 @@ window.onload = function () {
 </script>
 
 </body>
-</html> 
+</html>
