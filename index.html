@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
- <script src="https://cdn.counter.dev/script.js" data-id="b7835477-9bd8-403c-9e3f-5a686d701aa6" data-utcoffset="-5"></script>   
+    <!-- ⭐ Google Verification -->
+    <meta name="google-site-verification" content="IsY3xvG6cwi2LaIe_FxWyt-2cKXnMIy7PrBMLGOLZRE" />
+
+    <!-- ⭐ Analytics -->
+    <script src="https://cdn.counter.dev/script.js" data-id="b7835477-9bd8-403c-9e3f-5a686d701aa6" data-utcoffset="-5"></script>
+
     <meta charset="UTF-8">
 
+    <!-- ⭐ Social Preview -->
     <meta property="og:title" content="Star Scale" />
     <meta property="og:description" content="Honest ratings for movies, games, consoles, and books." />
     <meta property="og:image" content="https://n86441186-blip.github.io/Star-Scale/star.png" />
@@ -16,11 +22,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-
-            /* ⭐ Subtle cosmic texture */
             background-color: #0d1117;
             background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-
             color: #e6edf3;
             margin: 0;
             padding: 0;
@@ -73,22 +76,13 @@
             width: 80%;
             max-width: 700px;
             border-radius: 8px;
-
-            /* Ambient glow + floating illusion */
-            box-shadow:
-                0 0 18px #1f6feb33,
-                0 8px 20px rgba(0,0,0,0.45);
-
-            /* Smooth hover */
+            box-shadow: 0 0 18px #1f6feb33, 0 8px 20px rgba(0,0,0,0.45);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        /* ⭐ Hover lift */
         .info-box:hover, .botm:hover {
             transform: translateY(-6px);
-            box-shadow:
-                0 0 22px #1f6feb55,
-                0 12px 28px rgba(0,0,0,0.55);
+            box-shadow: 0 0 22px #1f6feb55, 0 12px 28px rgba(0,0,0,0.55);
         }
 
         .info-box h2, .botm h2 {
@@ -136,7 +130,6 @@
             border: 1px solid #30363d;
             border-radius: 8px;
             cursor: pointer;
-
             transition: 0.25s ease;
             box-shadow: 0 0 10px #1f6feb22;
         }
@@ -165,27 +158,14 @@
     <a href="polls.html">Polls</a>
 </nav>
 
-
 <div class="content">
     <div class="info-box">
         <h2>What is Star Scale?</h2>
-        <p>
-            Star Scale is a simple, clean rating system designed to give quick, honest scores 
-            for movies, games, consoles, and books. Each rating uses a 5‑star scale with half‑stars 
-            and sparkle stars for extra precision.
-        </p>
-        <p>
-            The goal is to keep things easy to browse, easy to understand, and fun to explore. 
-            No long reviews, no complicated categories — just straightforward ratings with a 
-            clean design and a glowing blue theme.
-        </p>
-        <p>
-            Use the navigation bar above to explore each category and discover ratings across 
-            all parts of Star Scale.
-        </p>
+        <p>Star Scale is a simple, clean rating system designed to give quick, honest scores for movies, games, consoles, and books.</p>
+        <p>Each rating uses a 5‑star scale with half‑stars and sparkle stars for extra precision.</p>
+        <p>Use the navigation bar above to explore each category.</p>
     </div>
 
-<div class="content">
     <div class="info-box">
         <h2>📊 Poll of the Month</h2>
         <p>Apple vs Samsung</p>
@@ -194,7 +174,6 @@
             <button class="poll-btn" onclick="vote('apple')">Apple</button>
             <button class="poll-btn" onclick="vote('samsung')">Samsung</button>
 
-            <!-- ⭐ New link to Polls page -->
             <p style="margin-top:15px;">
                 <a href="polls.html" class="botm-link">See past polls →</a>
             </p>
@@ -205,7 +184,6 @@
             <p id="apple-result"></p>
             <p id="samsung-result"></p>
 
-            <!-- ⭐ Also show link after voting -->
             <p style="margin-top:15px;">
                 <a href="polls.html" class="botm-link">See past polls →</a>
             </p>
@@ -250,36 +228,29 @@
     document.getElementById("apple-result").innerText =
       "Apple: " + applePercent + "% (" + apple + " votes)";
     document.getElementById("samsung-result").innerText =
-      "Samsung: " + samsungPercent + "% (" + samsung + " votes)";
+      "Samsung: " + samsungPercent + "% (" + samsung + "votes)";
 
     document.getElementById("poll-options").style.display = "none";
     document.getElementById("poll-results").style.display = "block";
   }
 </script>
 
-
-    <div class="botm">
-        <h2>📘 Book of the Month</h2>
-        <h3>Boom Town — 4.6 Stars</h3>
-        <p>
-            A family moves to a strange little town in Washington State called Boomtown… but nothing about this place is normal. Explosions, odd inventions, and quirky townspeople make this story unforgettable.
-        </p>
-        <a href="books.html#boom-town" class="botm-link">Read the full rating →</a>
-    </div>
+<div class="botm">
+    <h2>📘 Book of the Month</h2>
+    <h3>Boom Town — 4.6 Stars</h3>
+    <p>A quirky, explosive adventure set in a strange Washington town full of inventions and surprises.</p>
+    <a href="books.html#boom-town" class="botm-link">Read the full rating →</a>
+</div>
 
 <div class="botm">
     <h2>🎬 Movie Night Pick</h2>
     <h3><a href="movies.html#nacho-libre" class="botm-link">Nacho Libre</a> — 4.2 Stars</h3>
-    <p>
-        A goofy, fun, feel-good comedy that never gets old. Perfect for a chill movie night.
-    </p>
+    <p>A goofy, fun, feel-good comedy that never gets old.</p>
     <a href="movies.html#nacho-libre" class="botm-link">Read the full rating →</a>
 </div>
 
-</div>
-
 <footer>
-    Star Scale · Home · © 2026 Star Scale All rights reserved.
+    Star Scale · Home · © 2026 Star Scale — All rights reserved.
 </footer>
 
 </body>
