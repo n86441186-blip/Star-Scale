@@ -142,15 +142,74 @@
         </p>
     </div>
 
- <section id="about">
-  <h2>What’s Star Scale?</h2>
-  <p>...your explanation text...</p>
-</section>
+<h2>Poll of the Month</h2>
 
-<!-- ⭐ POLL OF THE MONTH GOES HERE ⭐ -->
 <div class="poll-box">
-  <h2>Poll of the Month</h2>
   <p>Apple vs Samsung</p>
+
+  <div id="poll-options">
+    <button onclick="vote('apple')">Apple</button>
+    <button onclick="vote('samsung')">Samsung</button>
+  </div>
+
+  <div id="poll-results" style="display:none; margin-top:10px;">
+    <p><strong>Results:</strong></p>
+    <p id="apple-result"></p>
+    <p id="samsung-result"></p>
+  </div>
+</div>
+
+<script>
+  function vote(choice) {
+    let apple = parseInt(localStorage.getItem("poll_apple") || "0");
+    let samsung = parseInt(localStorage.getItem("poll_samsung") || "0");
+
+    if (choice === "apple") apple++;
+    if (choice === "samsung") samsung++;
+
+    localStorage.setItem("poll_apple", apple);
+    localStorage.setItem("poll_samsung", samsung);
+
+    showResults();
+  }
+
+  function showResults() {
+    let apple = parseInt(localStorage.getItem("poll_apple") || "0");
+    let samsung = parseInt(localStorage.getItem("poll_samsung") || "0");
+
+    let total = apple + samsung;
+    let applePercent = total ? Math.round((apple / total) * 100) : 0;
+    let samsungPercent = total ? Math.round((samsung / total) * 100) : 0;
+
+    document.getElementById("apple-result").innerText = "Apple: " + applePercent + "% (" + apple + " votes)";
+    document.getElementById("samsung-result").innerText = "Samsung: " + samsungPercent + "% (" + samsung + " votes)";
+
+    document.getElementById("poll-options").style.display = "none";
+    document.getElementById("poll-results").style.display = "block";
+  }
+</script>
+
+<style>
+  .poll-box {
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+    max-width:300px;
+  }
+  .poll-box button {
+    width:100%;
+    margin:5px 0;
+    padding:10px;
+    background:#222;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+  }
+  .poll-box button:hover {
+    background:#333;
+  }
+</style>
 
   <div id="poll-options">
     <button onclick="vote('apple')">Apple</button>
