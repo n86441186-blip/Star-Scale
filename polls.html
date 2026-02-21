@@ -5,7 +5,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+
+            /* ⭐ Cosmic texture background */
             background-color: #0d1117;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+
             color: #e6edf3;
             margin: 0;
             padding: 0;
@@ -30,12 +34,28 @@
             margin: 30px auto;
         }
 
+        /* ⭐ Floating rating boxes */
         .rating-box {
             background-color: #161b22;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 6px;
             border: 1px solid #30363d;
+
+            /* Floating illusion */
+            box-shadow:
+                0 0 18px #1f6feb33,
+                0 8px 20px rgba(0,0,0,0.45);
+
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* ⭐ Hover lift */
+        .rating-box:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 0 22px #1f6feb55,
+                0 12px 28px rgba(0,0,0,0.55);
         }
 
         .rating-box h2,
@@ -78,15 +98,10 @@
         <p>Here you can view all previous Poll of the Month results.</p>
     </div>
 
-<p style="margin-top:15px;">
-    <a href="polls.html" class="botm-link">See past polls →</a>
-</p>
-
-    
     <!-- ⭐ EXAMPLE POLL ENTRY ⭐ -->
     <div class="rating-box">
         <h3>February 2026 — Apple vs Samsung</h3>
-        <p>Winner: T.B.D </p>
+        <p>Winner: T.B.D</p>
     </div>
 
 </div>
