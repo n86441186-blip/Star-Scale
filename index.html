@@ -1,179 +1,166 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- ⭐ Google Verification -->
-    <meta name="google-site-verification" content="IsY3xvG6cwi2LaIe_FxWyt-2cKXnMIy7PrBMLGOLZRE" />
+<meta charset="UTF-8">
 
-    <!-- ⭐ Analytics -->
-    <script src="https://cdn.counter.dev/script.js" data-id="b7835477-9bd8-403c-9e3f-5a686d701aa6" data-utcoffset="-5"></script>
+<!-- Google verification -->
+<meta name="google-site-verification" content="IsY3xvG6cwi2LaIe_FxWyt-2cKXnMIy7PrBMLGOLZRE" />
 
-    <meta charset="UTF-8">
+<!-- Mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ⭐ Social Preview -->
-    <meta property="og:title" content="Star Scale" />
-    <meta property="og:description" content="Honest ratings for movies, games, consoles, and books." />
-    <meta property="og:image" content="https://n86441186-blip.github.io/Star-Scale/star.png" />
-    <meta property="og:url" content="https://n86441186-blip.github.io/Star-Scale/" />
-    <meta name="twitter:card" content="summary_large_image" />
+<!-- SEO -->
+<title>Star Scale — Honest Ratings for Movies, Games, Consoles & Books</title>
+<meta name="description" content="Star Scale gives quick honest ratings for movies, games, consoles and books using a clean 5-star system.">
 
-    <title>Star Scale</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+<meta name="theme-color" content="#1f6feb">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0d1117;
-            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-            color: #e6edf3;
-            margin: 0;
-            padding: 0;
-        }
+<!-- Social preview -->
+<meta property="og:title" content="Star Scale" />
+<meta property="og:description" content="Quick honest ratings for movies, games, consoles and books." />
+<meta property="og:image" content="https://n86441186-blip.github.io/Star-Scale/star.png" />
+<meta property="og:url" content="https://n86441186-blip.github.io/Star-Scale/" />
+<meta name="twitter:card" content="summary_large_image" />
 
-        header {
-            background: linear-gradient(90deg, #0d1117, #1f6feb, #0d1117);
-            padding: 30px 0;
-            text-align: center;
-            color: white;
-            box-shadow: 0 0 15px #1f6feb;
-        }
+<!-- Analytics -->
+<script src="https://cdn.counter.dev/script.js" data-id="b7835477-9bd8-403c-9e3f-5a686d701aa6" data-utcoffset="-5"></script>
 
-        h1 {
-            margin: 0;
-            font-size: 42px;
-        }
+<link rel="icon" type="image/png" href="favicon.png">
 
-        nav {
-            background-color: #161b22;
-            border-bottom: 1px solid #30363d;
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 0 10px #1f6feb33;
-        }
+<style>
 
-        nav a {
-            color: #58a6ff;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 20px;
-            font-size: 20px;
-        }
+body{
+font-family:Arial, sans-serif;
+background:#0d1117 url("https://www.transparenttextures.com/patterns/stardust.png");
+color:#e6edf3;
+margin:0;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+header{
+background:linear-gradient(90deg,#0d1117,#1f6feb,#0d1117);
+padding:30px;
+text-align:center;
+box-shadow:0 0 15px #1f6feb;
+}
 
-        .content {
-            text-align: center;
-            margin-top: 50px;
-        }
+h1{margin:0;font-size:42px;}
 
-        .info-box, .botm {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            padding: 30px;
-            margin: 0 auto 40px auto;
-            width: 80%;
-            max-width: 700px;
-            border-radius: 8px;
-            box-shadow: 0 0 18px #1f6feb33, 0 8px 20px rgba(0,0,0,0.45);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
+nav{
+background:#161b22;
+padding:15px;
+text-align:center;
+border-bottom:1px solid #30363d;
+}
 
-        .info-box:hover, .botm:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 22px #1f6feb55, 0 12px 28px rgba(0,0,0,0.55);
-        }
+nav a{
+color:#58a6ff;
+text-decoration:none;
+font-weight:bold;
+margin:0 20px;
+font-size:20px;
+}
 
-        .info-box h2, .botm h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+nav a:hover{text-decoration:underline;}
 
-        .info-box p, .botm p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #c9d1d9;
-        }
+.content{text-align:center;margin-top:50px;}
 
-        .botm h3 {
-            margin-top: 0;
-            color: #1e90ff;
-            font-size: 24px;
-        }
+.card{
+background:#161b22;
+border:1px solid #30363d;
+padding:30px;
+margin:0 auto 40px;
+width:80%;
+max-width:700px;
+border-radius:8px;
+box-shadow:0 0 18px #1f6feb33,0 8px 20px rgba(0,0,0,.45);
+transition:.25s;
+}
 
-        .botm-link {
-            color: #1e90ff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 22px #1f6feb55,0 12px 28px rgba(0,0,0,.55);
+}
 
-        .botm-link:hover {
-            text-decoration: underline;
-        }
+.card h2{font-size:32px;margin-bottom:15px;}
+.card p{font-size:18px;color:#c9d1d9;line-height:1.6;}
 
-        footer {
-            margin-top: 70px;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 14px;
-            color: #8b949e;
-        }
-    </style>
+.stars{
+font-size:26px;
+color:#ffd43b;
+letter-spacing:3px;
+text-shadow:0 0 8px #ffd43b88;
+margin:10px 0;
+}
+
+.link{
+color:#1e90ff;
+text-decoration:none;
+font-weight:bold;
+}
+
+.link:hover{text-decoration:underline;}
+
+footer{
+margin-top:70px;
+padding:20px;
+text-align:center;
+font-size:14px;
+color:#8b949e;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Star Scale</h1>
+<h1>Star Scale</h1>
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="search.html">Search</a>
-    <a href="consoles.html">Consoles</a>
-    <a href="movies.html">Movies</a>
-    <a href="games.html">Games</a>
-    <a href="books.html">Books</a>
-    <a href="polls.html">Polls</a>
+<a href="index.html">Home</a>
+<a href="search.html">Search</a>
+<a href="consoles.html">Consoles</a>
+<a href="movies.html">Movies</a>
+<a href="games.html">Games</a>
+<a href="books.html">Books</a>
+<a href="polls.html">Polls</a>
 </nav>
 
 <div class="content">
 
-    <div class="info-box">
-        <h2>What is Star Scale?</h2>
-        <p>Star Scale is a simple, clean rating system designed to give quick, honest scores for movies, games, consoles, and books.</p>
-        <p>Each rating uses a 5‑star scale with half‑stars and sparkle stars for extra precision.</p>
-        <p>Use the navigation bar above to explore each category.</p>
-    </div>
+<div class="card">
+<h2>What is Star Scale?</h2>
+<p>Star Scale is a simple, clean rating system designed to give quick honest scores for movies, games, consoles and books.</p>
+<p>Each rating uses a 5-star scale with half-stars and sparkle stars for extra precision.</p>
+</div>
 
-    <!-- ⭐ CLEAN HOMEPAGE POLL BOX (no iframe) -->
-    <div class="info-box">
-        <h2>📊 Poll of the Month</h2>
-        <p>Apple vs Samsung</p>
+<div class="card">
+<h2>📊 Poll of the Month</h2>
+<p>Apple vs Samsung</p>
+<a href="polls.html" class="link">Vote on the latest poll →</a>
+</div>
 
-        <a href="polls.html" class="botm-link" style="font-size:20px; display:inline-block; margin-top:10px;">
-            Vote on the latest poll →
-        </a>
-    </div>
+<div class="card">
+<h2>📘 Book of the Month</h2>
+<p><b>Boom Town</b></p>
+<div class="stars">★★★★⯨</div>
+<p>A quirky adventure set in a strange Washington town full of inventions.</p>
+<a href="books.html#boom-town" class="link">Read the full rating →</a>
+</div>
 
-    <div class="botm">
-        <h2>📘 Book of the Month</h2>
-        <h3>Boom Town — 4.6 Stars</h3>
-        <p>A quirky, explosive adventure set in a strange Washington town full of inventions and surprises.</p>
-        <a href="books.html#boom-town" class="botm-link">Read the full rating →</a>
-    </div>
-
-    <div class="botm">
-        <h2>🎬 Movie Night Pick</h2>
-        <h3><a href="movies.html#nacho-libre" class="botm-link">Nacho Libre</a> — 4.2 Stars</h3>
-        <p>A goofy, fun, feel-good comedy that never gets old.</p>
-        <a href="movies.html#nacho-libre" class="botm-link">Read the full rating →</a>
-    </div>
+<div class="card">
+<h2>🎬 Movie Night Pick</h2>
+<p><b>Nacho Libre</b></p>
+<div class="stars">★★★★☆</div>
+<p>A goofy, fun, feel-good comedy that never gets old.</p>
+<a href="movies.html#nacho-libre" class="link">Read the full rating →</a>
+</div>
 
 </div>
 
 <footer>
-    Star Scale · Home · © 2026 Star Scale — All rights reserved.
+Star Scale · © 2026
 </footer>
 
 </body>
