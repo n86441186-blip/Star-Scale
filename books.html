@@ -31,22 +31,19 @@
             margin: 30px auto;
         }
 
-        /* ⭐ Floating rating boxes */
         .rating-box {
             background-color: #161b22;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 6px;
             border: 1px solid #30363d;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
             box-shadow:
                 0 0 18px #1f6feb33,
                 0 8px 20px rgba(0,0,0,0.45);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-            /* ⭐ New layout for covers */
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
         }
 
         .rating-box:hover {
@@ -61,12 +58,9 @@
             color: #58a6ff;
         }
 
-        /* ⭐ Book cover styling */
-        .cover {
+        .icon {
             width: 120px;
             height: auto;
-            border-radius: 6px;
-            box-shadow: 0 0 10px #00000066;
         }
 
         a {
@@ -97,10 +91,24 @@
 
 <div class="container">
 
-    <!-- ⭐ BOOK LIST WITH COVERS ⭐ -->
+<!-- ⭐ ICON URLS ⭐ -->
+<!-- Sword: Action/Adventure -->
+<!-- https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png -->
 
-<div class="rating-box" id="thelastthingiremember">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/3/3e/The_Last_Thing_I_Remember_cover.jpg">
+<!-- Magnifying Glass: Mystery -->
+<!-- https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/512px-Magnifying_glass_icon.svg.png -->
+
+<!-- Cross: Christian/Inspirational -->
+<!-- https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Christian_cross_gold.svg/512px-Christian_cross_gold.svg.png -->
+
+<!-- Book: General -->
+<!-- https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Books_icon.svg/512px-Books_icon.svg.png -->
+
+
+<!-- ⭐ BOOK LIST WITH ICONS ⭐ -->
+
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>The Last Thing I Remember</h2>
         <p>⭐⭐⭐⭐⭐ (4.9/5)</p>
@@ -108,8 +116,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="princewarriors">
-    <img class="cover" src="https://images-na.ssl-images-amazon.com/images/I/81p7lZ9YtLL.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>The Prince Warriors</h2>
         <p>⭐⭐⭐⭐✨ (4.6/5)</p>
@@ -117,8 +125,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="shilohcollection">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/4/4c/ShilohNovel.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Books_icon.svg/512px-Books_icon.svg.png">
     <div>
         <h2>Shiloh Collection — Naylor</h2>
         <p>⭐⭐⭐⭐☆ (4.3/5)</p>
@@ -126,8 +134,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="adognamedchristmas">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/1/1a/A_Dog_Named_Christmas.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Christian_cross_gold.svg/512px-Christian_cross_gold.svg.png">
     <div>
         <h2>A Dog Named Christmas — Greg Kincaid</h2>
         <p>⭐⭐⭐⭐☆ (4/5)</p>
@@ -135,8 +143,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="spinechillers">
-    <img class="cover" src="https://m.media-amazon.com/images/I/51V8Q0Q2KEL.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/512px-Magnifying_glass_icon.svg.png">
     <div>
         <h2>Spine Chillers Mysteries — Fred E. Katz</h2>
         <p>⭐⭐⭐⭐☆ (3.7/5)</p>
@@ -144,8 +152,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="hungergames">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/d/dc/The_Hunger_Games.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Books_icon.svg/512px-Books_icon.svg.png">
     <div>
         <h2>The Hunger Games</h2>
         <p>⭐⭐⭐⭐✨ (4.5/5)</p>
@@ -153,8 +161,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="spyschool">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/4/4f/Spy_School_book_cover.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>Spy School</h2>
         <p>⭐⭐⭐⭐✨ (4.5/5)</p>
@@ -162,8 +170,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="lastmusketeer">
-    <img class="cover" src="https://m.media-amazon.com/images/I/81p5p7uQGWL.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>The Last Musketeer</h2>
         <p>⭐⭐⭐⭐✨ (4.3/5)</p>
@@ -171,8 +179,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="moonbasealpha">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/4/4a/Space_Case_%28Stuart_Gibbs%29.png">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>Moon Base Alpha — Stuart Gibbs</h2>
         <p>⭐⭐⭐⭐☆ (3.9/5)</p>
@@ -180,8 +188,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="aio">
-    <img class="cover" src="https://m.media-amazon.com/images/I/81p0kGugrJL.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Christian_cross_gold.svg/512px-Christian_cross_gold.svg.png">
     <div>
         <h2>Adventures in Odyssey</h2>
         <p>⭐⭐⭐⭐⭐ (5/5)</p>
@@ -189,8 +197,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="doorwithin">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/4/4d/The_Door_Within.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>The Door Within</h2>
         <p>⭐⭐⭐⭐☆ (4.1/5)</p>
@@ -198,8 +206,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="narnia">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/8/86/The_Chronicles_of_Narnia_box_set_cover.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>The Chronicles of Narnia</h2>
         <p>⭐⭐⭐⭐✨ (4.3/5)</p>
@@ -207,8 +215,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="eragon">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/9/9e/Eragon_book_cover.png">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>Eragon (Inheritance Cycle)</h2>
         <p>⭐⭐⭐⭐⭐ (4.7/5)</p>
@@ -216,30 +224,26 @@
     </div>
 </div>
 
-<div class="rating-box" id="rangersapprentice">
-    <img class="cover" src="https://upload.wikimedia.org/wikipedia/en/5/5f/The_Ruins_of_Gorlan.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>Ranger’s Apprentice Series</h2>
         <p>⭐⭐⭐⭐☆ (4.1/5)</p>
-        <p>A super detailed and really cool adventure series, but it probably should have ended around book 6. 
-        The later books stretch things out and get a bit dry, though the early arc is fantastic.</p>
+        <p>A super detailed and really cool adventure series, but it probably should have ended around book 6.</p>
     </div>
 </div>
 
-<div class="rating-box" id="boom-town">
-    <img class="cover" src="https://m.media-amazon.com/images/I/51Y0ZLhM5BL.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Christian_cross_gold.svg/512px-Christian_cross_gold.svg.png">
     <div>
         <h2>Boom Town — 4.6 Stars</h2>
         <p>⭐⭐⭐⭐✨ (4.6/5)</p>
-        <p>
-            A family moves to a strange little town in Washington State called Boomtown… but nothing about this place is normal. 
-            Explosions, odd inventions, and quirky townspeople make this story unforgettable, funny, and full of heart.
-        </p>
+        <p>A quirky, explosive, unforgettable story about a strange little town full of heart.</p>
     </div>
 </div>
 
-<div class="rating-box" id="wormling">
-    <img class="cover" src="https://m.media-amazon.com/images/I/51l1tLBr5-L.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>The Wormling Series</h2>
         <p>⭐⭐⭐⭐☆ (4.1/5)</p>
@@ -247,8 +251,8 @@
     </div>
 </div>
 
-<div class="rating-box" id="berinfell">
-    <img class="cover" src="https://m.media-amazon.com/images/I/81mVYJvZ2eL.jpg">
+<div class="rating-box">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sword_icon_blue.svg/512px-Sword_icon_blue.svg.png">
     <div>
         <h2>The Berinfell Prophecies</h2>
         <p>⭐⭐⭐⭐✨ (4.4/5)</p>
@@ -257,36 +261,6 @@
 </div>
 
 </div>
-
-<!-- ⭐ AUTO‑SCROLL + HIGHLIGHT SEARCH SCRIPT ⭐ -->
-<script>
-window.onload = function () {
-
-    const params = new URLSearchParams(window.location.search);
-    const search = params.get("search");
-    if (!search) return;
-
-    const term = search.toLowerCase();
-    const boxes = document.querySelectorAll(".rating-box");
-
-    for (let box of boxes) {
-        const title = box.querySelector("h2").innerText.toLowerCase();
-
-        if (title.includes(term)) {
-
-            box.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-            box.style.border = "2px solid #1f6feb";
-            box.style.boxShadow = "0 0 15px #1f6feb";
-
-            return;
-        }
-    }
-};
-</script>
 
 </body>
 </html>
